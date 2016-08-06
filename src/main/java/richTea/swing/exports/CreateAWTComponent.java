@@ -52,10 +52,10 @@ public class CreateAWTComponent extends CreateBean {
 	protected Rectangle getBounds(Component component) {
 		Dimension preferredSize = component.getPreferredSize();
 		
-		int x = (int) context.getNumberOrDefault("x", 0);
-		int y = (int) context.getNumberOrDefault("y", 0);
-		int width = (int) context.getNumberOrDefault("width", preferredSize.getWidth());
-		int height = (int) context.getNumberOrDefault("height", preferredSize.getHeight());
+		int x = context.getNumberOrDefault("x", 0).intValue();
+		int y = context.getNumberOrDefault("y", 0).intValue();
+		int width = context.getNumberOrDefault("width", preferredSize.getWidth()).intValue();
+		int height = context.getNumberOrDefault("height", preferredSize.getHeight()).intValue();
 		
 		return new Rectangle(x, y, width, height);
 	}
